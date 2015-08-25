@@ -1,0 +1,27 @@
+<window>
+	<div>
+		<div>
+			<grid>
+				<rows>
+					<row>
+						<cell>
+							<window>
+								<hlayout>
+									<hlayout>
+										<vlayout>
+											<div>
+												<hlayout>
+													<label value="label" />
+												</hlayout>
+											</div>
+										</vlayout>
+									</hlayout>
+								</hlayout>
+							</window>
+						</cell>
+					</row>
+				</rows>
+			</grid>
+		</div>
+	</div>
+</window>

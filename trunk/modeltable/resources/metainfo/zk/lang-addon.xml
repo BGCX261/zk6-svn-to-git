@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<language-addon>
+	<addon-name>modeltable</addon-name> <!-- required -->
+
+ 	<version>
+		<version-class>org.zkoss.modeltable.Version</version-class>
+		<version-uid>0.8.0</version-uid>
+		<zk-version>5.0.0</zk-version><!-- or later -->
+	</version>
+
+	<language-name>xul/html</language-name>
+	<component>
+		<component-name>modeltable</component-name> <!-- required -->
+		<component-class>org.zkoss.modeltable.Modeltable</component-class> <!-- required -->
+		<widget-class>zul.modeltable.Modeltable</widget-class> <!-- required -->
+		<mold>
+			<mold-name>default</mold-name>
+			<mold-uri>mold/modeltable.js</mold-uri>
+		</mold>
+	</component>
+</language-addon>

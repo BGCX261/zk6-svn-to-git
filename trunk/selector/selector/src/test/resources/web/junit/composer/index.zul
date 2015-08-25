@@ -1,0 +1,4 @@
+<zk>
+	<window title="new page title" border="normal" 
+		apply="org.zkoss.selector.test.composer.IndexComposer" />
+</zk>

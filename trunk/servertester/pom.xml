@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.zkoss.test</groupId>
+	<artifactId>servertester</artifactId>
+	<version>0.8.0</version>
+	<name>Server Side JUnit Tester</name>
+	<properties>
+		<zk.version>5.0.7</zk.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.zkoss.zk</groupId>
+			<artifactId>zk</artifactId>
+			<version>${zk.version}</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-servlet-tester</artifactId>
+			<version>7.0.0.M2</version>
+		</dependency>
+	</dependencies>
+</project>

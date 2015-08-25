@@ -1,0 +1,78 @@
+<zk>
+	<groupbox class="main" width="535px" 
+		apply="demo.selector.composer.GroupboxController">
+		<caption>
+			<checkbox id="cb" checked="true" />
+			Enable Backups
+		</caption>
+		<attribute name="onOpen">
+			cb.setChecked(self.isOpen());
+		</attribute>
+		<vlayout spacing="15px">
+			<hlayout>
+				<label value="Source Directory:" />
+				<textbox value="/home/zk/projects" />
+				<label value="Target Directory:" />
+				<textbox value="/mnt/backup/zk" />
+			</hlayout>
+			<checkbox label="Compress archived files" />
+			<groupbox id="gb" mold="3d" width="100%" closable="false">
+				<caption label="Backups Routine" />
+				<hlayout spacing="10px">
+					<vlayout>
+						<radiogroup>
+							<attribute name="onCheck">
+								spd.setDisabled(self.getSelectedIndex() == 1);
+							</attribute>
+							<radio label="Week" value="0"
+								selected="true" />
+							<radio label="Day" value="1" />
+						</radiogroup>
+					</vlayout>
+					<label value="Day of week :" width="100%" />
+					<spinner id="spd" width="60px" value="1"
+						constraint="no negative,no zero,min 1, max 7" />
+					<label value="Backup Time :" width="100px" />
+					<timebox width="60px" cols="16" format="hh:mm"
+						onCreate="self.value = new Date()" />
+				</hlayout>
+			</groupbox>
+			<groupbox id="gb3" mold="3d" width="100%" open="false">
+				<attribute name="onOpen">
+					arrow.setSclass("open-" + self.isOpen());
+				</attribute>
+				<caption>
+					<div id="arrow" class="open-false">
+						Click here if YOU NEED HELP
+					</div>
+				</caption>
+				<html><![CDATA[
+					<ul>
+						<li>Storage</li>
+						<ul>
+							<li>Data repository models</li>
+							<li>Storage media</li>
+							<li>Managing the data repository</li>
+						</ul>
+						<li>Selection and extraction</li>
+						<ul>
+							<li>Files</li>
+							<li>...</li>
+						</ul>
+					</ul>
+					<span style="color:gray;font-style:italic">
+						Simply add description and image related
+						information into the CAPTION of GROUPBOX.
+					</span>
+				]]></html>
+			</groupbox>
+			<groupbox width="500px">
+				<caption>
+					<div class="folder">
+						<label value="Explorer"></label>
+					</div>
+				</caption>
+			</groupbox>
+		</vlayout>
+	</groupbox>
+</zk>

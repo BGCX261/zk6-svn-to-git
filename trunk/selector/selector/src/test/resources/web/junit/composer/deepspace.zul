@@ -1,0 +1,9 @@
+<zk>
+	<window id="win0" apply="org.zkoss.selector.test.composer.DeepspaceComposer">
+		<window id="win1">
+			<include id="inc0" src="content/deepspace-inc0.zul" />
+			<label id="lb" value="lb1" />
+		</window>
+		<label id="lb" value="lb0" />
+	</window>
+</zk>

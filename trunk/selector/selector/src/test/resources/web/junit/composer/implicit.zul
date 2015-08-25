@@ -1,0 +1,6 @@
+<zk>
+	<zscript>
+		int i = 99;
+	</zscript>
+	<window apply="org.zkoss.selector.test.composer.ImplicitComposer" />
+</zk>

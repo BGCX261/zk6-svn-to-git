@@ -1,0 +1,13 @@
+<zk>
+	<div id='myroot'>
+		<div class='container'>
+			<textbox id='txt' />
+			<label value='hello' />
+			<listbox />
+			<hbox style='width:500px' />
+			<hbox hflex='1' />
+			<hbox hflex='1' vflex='1' style='width:500px' />
+			<vbox />
+		</div>
+	</div>
+</zk>

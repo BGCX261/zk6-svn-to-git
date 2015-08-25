@@ -1,0 +1,60 @@
+<zk>
+	<style>
+		.z-row .z-label {
+			font-weight: bold;
+			color: #1469AB;
+		}
+	</style>
+	<grid width="700px" apply="demo.selector.composer.FormController">
+		<columns>
+			<column label="Type" width="100px" />
+			<column label="Content" />
+			<column label="Type" width="100px" />
+			<column label="Content" />
+		</columns>
+		<rows>
+			<row>
+				UserName:
+				<textbox value="John" width="150px" />
+				Phone:
+				<intbox constraint="no negative,no zero" width="150px"
+					value="12345678" maxlength="15" />
+			</row>
+			<row>
+				Password:
+				<textbox id="pwd1" type="password" value="123456789" width="150px" />
+				Weight:
+				<decimalbox format="###.##" value="154.32" width="150px" />
+			</row>
+			<row>
+				Re-type:
+				<textbox id="pwd2" type="password" value="123456789" width="150px">
+					<attribute name="onChange"><![CDATA[
+						boolean eq = pwd2.getValue().equals(pwd1.getValue());
+						pwd2.style = "color:" + (eq ? "black" : "red");
+					]]></attribute>
+				</textbox>
+				Birthday:
+				<datebox width="150px" format="yyyy/MM/DD" text="2011/01/19" />
+			</row>
+			<row>
+				Age:
+				<intbox value="19" constraint="no negative,no zero" width="150px" />
+				E-mail:
+				<textbox width="150px" value="zk@zkoss.org" />
+			</row>
+			<row>
+				Memo:
+				<cell colspan="3">
+					<textbox rows="6" width="580px" value="Use ZK for the view tier" />
+				</cell>
+			</row>
+			<row>
+				<cell colspan="4" style="text-align:center">
+					<button label="Clear" width="100px" height="30px" />
+					<button label="Submit" width="100px" height="30px" />
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</zk>

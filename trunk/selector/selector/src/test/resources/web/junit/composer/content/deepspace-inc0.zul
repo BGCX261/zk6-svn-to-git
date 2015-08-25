@@ -1,0 +1,5 @@
+<?component name="macro0" macroURI="/macro/macro0.zul"?>
+<div>
+	<macro0 id="macro0" />
+	<label id="lb" value="lb2" />
+</div>

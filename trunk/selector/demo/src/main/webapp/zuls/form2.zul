@@ -1,0 +1,133 @@
+<zk>
+	<style>
+		.hightlight {
+			color: #1469AB;
+			font-weight: bold;
+		}
+	</style>
+	<grid fixedLayout="true" apply="demo.selector.composer.FormController">
+		<columns>
+			<column label="Type" width="150px" />
+			<column label="Content" />
+			<column label="Component" width="250px" />
+		</columns>
+		<rows>
+			<row>
+				<label value="UserName" width="150px" />
+				<hlayout>
+					<textbox id="name" value="John" width="150px" tabbable="true" />
+				</hlayout>
+				<hlayout>
+					<label sclass="hightlight">Textbox</label> with tabbable
+				</hlayout>
+			</row>
+			<row>
+				Password
+				<textbox id="pwd1" type="password" value="123456789" width="150px" />
+				<hlayout>
+					<label sclass="hightlight">Textbox</label>  type = "password"
+				</hlayout> 
+			</row>
+			<row>
+				Re-type Password
+				<textbox id="pwd2" type="password" value="123456789" width="150px">
+					<attribute name="onChange"><![CDATA[
+						if (!pwd2.getValue().equals(pwd1.getValue())) {
+							pwd2.style = "color:red";
+						} else {
+							pwd2.style = "color:black";
+						}
+					]]></attribute>
+				</textbox>
+				<hlayout>
+					<label sclass="hightlight">Textbox</label> with value validate
+				</hlayout>
+			</row>
+			<row>
+				Age:
+				<intbox value="19" constraint="no negative,no zero" width="150px" />
+				<hlayout>
+					<label sclass="hightlight">Intbox</label> with constraint
+				</hlayout>
+			</row>
+			<row>
+				Phone:
+				<intbox constraint="no negative,no zero" width="150px" value="12345678" maxlength="15"/>
+				<hlayout>
+					<label sclass="hightlight">Intbox</label> with max length limit
+				</hlayout>
+			</row>
+			<row>
+				Weight:
+				<decimalbox format="###.##" value="154.32" width="150px" />
+				<hlayout>
+					<label sclass="hightlight">Decimalbox</label> with format
+				</hlayout>
+			</row>
+			<row>
+				Birthday:
+				<hbox>
+					<datebox id="db" width="150px" />
+					Format :
+					<listbox rows="1" onSelect="db.setFormat(self.selectedItem.value)" mold="select">
+						<listitem label="Default" value="" />
+						<listitem label="yyyy/MM/dd hh:mm a" value="yyyy/MM/dd hh:mm a" />
+						<listitem label="yyyy/MM/dd" value="yyyy/MM/dd" />
+						<listitem label="MM-dd-yy" value="MM-dd-yy" />
+					</listbox>
+				</hbox>
+				<hlayout>
+					<label sclass="hightlight">Datebox</label> and <label sclass="hightlight">Listbox</label> in select mold
+				</hlayout>
+			</row>
+			<row>
+				E-mail:
+				<textbox width="150px" value="zk@zkoss.org" />
+				<hlayout>
+					<label sclass="hightlight">Textbox</label> with regexp constraint
+				</hlayout>
+				  
+			</row>
+			<row>
+				Memo:
+				<vlayout>
+					<div style="width:375px;text-align:right;padding:0;">
+						Adjust Height:
+						<spinner value="6" constraint="no negative,no zero">
+							<attribute name="onChanging"><![CDATA[
+								if (event.value.length() > 0 && Integer.parseInt(event.value) > 0)
+									intro.rows = Integer.parseInt(event.value);
+								 
+							]]></attribute>
+						</spinner>
+					</div>
+					<textbox id="intro" rows="6" width="370px;">
+						<attribute name="value">Use ZK for the view tier</attribute>
+					</textbox>
+				</vlayout>
+				<hlayout>
+					<label sclass="hightlight">Textbox</label> with multiple rows and <label sclass="hightlight">Spinner</label>
+				</hlayout>
+			</row>
+			<row>
+				<cell colspan="3" style="text-align:center">
+					<button label="Set Width" width="100px" height="30px" />
+					<button label="Clear" width="100px" height="30px" />
+					<button label="Submit" width="100px" height="30px">				   
+						<attribute name="onClick"><![CDATA[
+							if (validate()) {
+								alert("Welcome " + name.value + "!");
+							}
+						]]></attribute>
+					</button>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+	<zscript>
+	db.value = new Date();
+	boolean validate() {
+		return true;
+	}
+	</zscript>
+</zk>

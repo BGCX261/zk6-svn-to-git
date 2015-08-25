@@ -1,0 +1,28 @@
+<zk>
+	<window>
+		<caption>
+			<button />
+		</caption>
+		<borderlayout>
+			<east>
+				<div>
+					<label />
+					<textbox />
+				</div>
+				<button />
+			</east>
+			<north>
+				
+			</north>
+			<center>
+				<hlayout>
+					<intbox />
+					<vlayout>
+						
+					</vlayout>
+					<datebox />
+				</hlayout>
+			</center>
+		</borderlayout>
+	</window>
+</zk>

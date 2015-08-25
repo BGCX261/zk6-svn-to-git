@@ -1,0 +1,64 @@
+<?page title="Selector" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<style><![CDATA[
+		.top-v-align > .z-hlayout-inner {
+			vertical-align: top;
+		}
+		.code {
+			font-family: "Courier New", monospace;
+			margin-top: 1px;
+			padding-right: 5px;
+		}
+		.code input, .code textarea {
+			font-family: "Courier New", monospace;
+		}
+		.__selected__ {
+			border: 3px solid #FF0000;
+		}
+		.datatag {
+			font-weight: bold;
+		}
+	]]></style>
+	<window apply="demo.selector.SelectorDemoController">
+		<hlayout sclass="top-v-align">
+			<window id="componentsWindow" hflex="1" />
+			<vlayout id="ctrlVL" hflex="1">
+				<hlayout>
+					<div sclass="code" hflex="1">
+						<textbox id="selectorBox" hflex="1" />
+					</div>
+					<button label="Step" />
+					<button label="Reset" />
+				</hlayout>
+				<div sclass="code" hflex="1">
+					<textbox id="zulBox" multiline="true" tabbable="true" 
+						rows="30" hflex="1" />
+				</div>
+				<hlayout sclass="top-v-align">
+					<vlayout hflex="2">
+						<hlayout>
+							<label sclass="datatag">Index: </label>
+							<label value="-" />
+						</hlayout>
+						<hlayout>
+							<label sclass="datatag">Component: </label>
+							<label value="-" />
+						</hlayout>
+						<hlayout>
+							<label sclass="datatag">Parse Time: </label>
+							<label value="-" />
+						</hlayout>
+						<hlayout>
+							<label sclass="datatag">Step Time: </label>
+							<label value="-" />
+						</hlayout>
+						<label id="iterLb" value="" multiline="true" />
+					</vlayout>
+					<vlayout hflex="1">
+						<listbox />
+					</vlayout>
+				</hlayout>
+			</vlayout>
+		</hlayout>
+	</window>
+</zk>
